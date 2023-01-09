@@ -1,21 +1,18 @@
-
+import src_delete from '../assets/delete.png'; //colocando imagem no button
 
 function List(props) {
 
-    function show(item) {
-        console.log(item)
-    }
-    
     return (
-        <ul>  {/* agora item é um objeto com propriedades */}
+        <ul> 
             {props.items.map(item => 
             <li key={item.id}>
                 {item.text}
-                <button onClick={()=>{show(item)}}>show item</button>
+                <button onClick={()=>{props.onDeleteItem(item)}}>
+                    <img alt='delete' src={src_delete}></img>
+                </button>
             </li>)}
         </ul>
     )
-
 }
 
 export default List;
