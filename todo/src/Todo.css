@@ -2,3 +2,8 @@
     margin: auto;
     max-width: 600px;
 }
+
+/* foi criado a classe done e aplicada em li className={item.done?'done':''}  */
+.done {
+    text-decoration: line-through;
+}

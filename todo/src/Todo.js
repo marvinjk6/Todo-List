@@ -8,7 +8,7 @@ function Todo() {
 
     const [items, setItems] = useState([]);
 
-    // essa função vai criar um novo array pegando todos os item que tiverem o id diferente do passado como argumento da função, ou seja vai excluir esse item
+
     function onDeleteItem(item) {
         let filteredItems = items.filter(it => it.id !== item.id);
         setItems(filteredItems);
@@ -17,13 +17,24 @@ function Todo() {
     function onAddItem(text) {
         let item = new Item(text);
         setItems([...items, item]);
-    }   
+    }
+
+    // essa função vai fazer item.done ir alternado entre true e false
+    function onDone(item) {
+        let updatedItems = items.map(it => {
+            if(it.id === item.id) {
+                it.done = !it.done;
+            }
+            return it;
+        })
+        setItems(updatedItems);
+    }
 
     return(
         <div className='container'>
             <h1>Todo-List</h1>
             <TodoForm  onAddItem={onAddItem}></TodoForm>
-            <List onDeleteItem={onDeleteItem} items={items}></List>
+            <List onDone={onDone} onDeleteItem={onDeleteItem} items={items}></List>
         </div>
     )
 }
