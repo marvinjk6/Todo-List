@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import List from './components/List'; 
-import TodoForm from './components/TodoForm'; // importar TodoForm
+import TodoForm from './components/TodoForm'; 
+import Item from './components/Item'; // importar Item
 import './Todo.css';
 
 function Todo() {
 
     const [items, setItems] = useState([]);
 
-    // essa função que atualiza o estado de items, vai ser passada como propriedade de TodoForm
+   
     function onAddItem(text) {
-        setItems([...items, text])
+        // a função cria um item e adiciona em items
+        let item = new Item(text)
+        setItems([...items, item])
     }   
 
     return(
