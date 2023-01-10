@@ -1,32 +1,15 @@
-import src_delete from '../assets/delete.png';
-import src_done from '../assets/done.png';
-import src_undone from '../assets/undone.png';
-import Card from './Card';
-
-function DoneImg(props) {
-    if(props.done) {
-        return(<img alt='done' src={src_done}></img>)
-    } else {
-        return(<img alt='undone' src={src_undone}></img>)
-    }   
-}
+import ListItem from "./ListItem";
 
 function List(props) {
+
+    // o ideal é que cada componete tenha uma função clara, antes List além de criar a lista, ele criava cada um dos itens. Agora ele cria a lista
+    // e ListItem os itens da lista. ListItem tem que ter acesso a item e as funções que alteram os estados dos items
 
     return (
         <ul> 
             {props.items.map(item => 
-            <li key={item.id}>
-                <Card className={item.done?'done item':'item'}>
-                    {item.text}
-                    <div>
-                        <button onClick={()=>{props.onDone(item)}}><DoneImg done={item.done}></DoneImg></button>
-                        <button onClick={()=>{props.onDeleteItem(item)}}>
-                            <img alt='delete' src={src_delete}></img>
-                        </button>
-                    </div>
-                </Card>
-            </li>)}
+                <ListItem key={item.id} onDone={props.onDone} onDeleteItem={props.onDeleteItem} item={item}></ListItem>
+            )}
         </ul>
     )
 }
