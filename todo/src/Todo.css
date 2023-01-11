@@ -4,7 +4,8 @@
 }
 .container {
     margin: auto;
-    max-width: 600px;
+    max-width: 700px;
+    padding: 5px 10px;
 }
 
 .done {
@@ -27,4 +28,44 @@ ul {
 
 .card {
     box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.536); 
+}
+
+/* todo-list e button foram colocados dentro da tag header */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.addButton {
+    color: white;
+    border: none;
+    background-color: rgb(0, 110, 255);
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    font-size: 25px;
+}
+
+.modal {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.267);
+}
+
+.hideModal {
+    display: none;
+}
+
+.cardModal {
+    padding: 20px;
+    background-color: white;
 }
