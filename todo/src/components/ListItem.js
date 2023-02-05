@@ -13,8 +13,6 @@ function DoneImg(props) {
 
 function ListItem(props) {
 
-    // agora ListItem herda a propriedade item passada 
-
     return(
         <li>
             <Card className={props.item.done?'done item':'item'}>

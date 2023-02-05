@@ -34,7 +34,6 @@ function Todo() {
     function onAddItem(text) {
         let item = new Item(text);
         setItems([...items, item]);
-        // assim que adicionar o item vai fazer o modal desaparecer da tela
         onHideModal();
     }
 
@@ -52,7 +51,6 @@ function Todo() {
         setShowModal(false);
     }
 
-    // setshow modal vai receber true
     return(
         <div className='container'>
             <header className='header'>

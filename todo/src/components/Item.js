@@ -1,4 +1,3 @@
-
 class Item {
     
     static lastId = 0;
